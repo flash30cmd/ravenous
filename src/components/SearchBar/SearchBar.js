@@ -7,24 +7,24 @@ const sortByOptions = {
   'Most Reviewed': 'review_count'
 }
 
-function getSortByClass (sortByOption) {
-  if (this.state === this.sortByOption) {
-    return 'active';
-  } else {
-    return '';
-  }
-}
-
-function handleSortByChange (sortByOption) {
-  this.setState({
-    sortBy: sortByOption
-  })
-}
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { term: '', location: '', sortBy: 'best_match'}
+  }
+  getSortByClass (sortByOption) {
+    if (this.state === this.sortByOption) {
+      return 'active';
+    } else {
+      return '';
+    }
+  }
+
+  handleSortByChange (sortByOption) {
+    this.setState({
+      sortBy: sortByOption
+    })
   }
 
   renderSortByOptions() {

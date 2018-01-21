@@ -16,24 +16,28 @@ let business = {
   reviewCount: 90
 };
 
-let businesses = [business,
-business,
-business,
-business,
-business,
-business];
 
 class App extends Component {
-  searchYelp(term, location, sortBy) {
-    console.log(`Searching for restaurant with ${term}, in ${location} and sorting by ${sortBy}`);
+  constructor(props) {
+    super(props)
+
+    let businesses = [business,
+    business,
+    business,
+    business,
+    business,
+    business];
+
   }
-  
+  searchYelp(term, location, sortBy) {
+    console.log(`Searching for restaurant with ${term}, in ${location} and sorting by ${sor
+  }
   render() {
     return (
       <div className="App">
   <h1>ravenous</h1>
 <SearchBar searchYelp={this.searchYelp} />
-  <BusinessList businesses={businesses} />
+  <BusinessList businesses={this.state.businesses} />
 </div>
     );
   }

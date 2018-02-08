@@ -3,8 +3,9 @@ import './App.css';
 
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
+import Yelp from 'src/util';
 
-const business = {
+/*const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
   name: 'MarginOtto Pizzeria',
   address: '1010 Paddington Way',
@@ -23,11 +24,22 @@ const businesses = [
   business,
   business,
   business
-];
+];*/
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      businesses: []
+    };
+    this.searchYelp.bind(this);
+  }
   searchYelp(term, location, sortBy) {
-    console.log(`Searching for restaurant with ${term}, in ${location} and sorting by ${sortBy}`);
+    Yelp.search(term, location, sortBy).then(businesses => {
+      setState({
+        businesses: businesses
+      })
+    })
   }
   render() {
     return (

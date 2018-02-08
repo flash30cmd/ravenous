@@ -20,10 +20,10 @@ let Yelp = {
             address: business.location.display_address,
             city: business.location.city,
             state: business.location.state,
-            zipCode: business.location.zipCode,
-            category: business.categories,
+            zipCode: business.location.zip_code,
+            category: business.categories[0],
             rating: business.rating,
-            reviewCount: business.reviewCount
+            reviewCount: business.review_count
 
           }
         });

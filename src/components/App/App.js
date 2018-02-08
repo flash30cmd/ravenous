@@ -36,7 +36,7 @@ class App extends Component {
   }
   searchYelp(term, location, sortBy) {
     Yelp.search(term, location, sortBy).then(businesses => {
-      setState({
+      this.setState({
         businesses: businesses
       })
     })

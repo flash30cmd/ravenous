@@ -17,7 +17,6 @@ let Yelp = {
             name: business.name,
             id: business.id,
             imgSrc: business.image_url,
-            name: business.name,
             address: business.location.display_address,
             city: business.location.city,
             state: business.location.state,
